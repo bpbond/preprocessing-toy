@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '54 * * * *'
+    - cron: '11 * * * *'
 
 name: Timed GitHub Action
 
@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Hello
         run: |
-          Rscript -e "writeLines(as.character(Sys.time()), '~/Desktop/output.txt'')"
+          Rscript -e "writeLines(as.character(Sys.time()), '~/Desktop/output.txt')"
 
       - name: Commit and push
         run: |
