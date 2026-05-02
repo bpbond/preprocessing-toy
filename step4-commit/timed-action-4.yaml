@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Hello
         run: |
-          Rscript -e "writeLines(as.character(Sys.time()), '~/Desktop/output.txt')"
+          Rscript -e "writeLines(as.character(Sys.time()), 'output.txt')"
 
       - name: Commit and push
         run: |
