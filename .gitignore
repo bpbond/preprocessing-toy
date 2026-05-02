@@ -48,3 +48,5 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 .github/workflows/.DS_Store
+
+.DS_Store
