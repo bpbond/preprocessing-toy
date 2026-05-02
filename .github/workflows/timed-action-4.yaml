@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 * * * *'
+    - cron: '11 * * * *'
 
 name: Timed GitHub Action
 
@@ -16,9 +16,17 @@ jobs:
       contents: write
     
     steps:
+      - run: git config --system --add safe.directory '*'
+      
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: dashboard
+    
       - name: Hello
         run: |
-          Rscript -e "writeLines(as.character(Sys.time()), '~/Desktop/output.txt'')"
+          Rscript -e "writeLines(as.character(Sys.time()), 'output.txt')"
 
       - name: Commit and push
         run: |
