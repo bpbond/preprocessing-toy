@@ -23,10 +23,16 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
+
+      - name: Load Dropbox token
+        uses: mobiledevops/secret-to-file-action@v1
+        with:
+          base64-encoded-secret: ${{ secrets.DROPBOX }}
+          filename: "tokenfile.RDS"
     
       - name: Hello
         run: |
-          Rscript -e "writeLines(as.character(Sys.time()), 'output.txt')"
+          Rscript preprocess.R
 
       - name: Commit and push
         run: |

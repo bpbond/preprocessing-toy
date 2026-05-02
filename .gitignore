@@ -50,3 +50,6 @@ rsconnect/
 .github/workflows/.DS_Store
 
 .DS_Store
+
+# Secrets!
+tokenfile.RDS*
