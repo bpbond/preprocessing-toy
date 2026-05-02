@@ -30,6 +30,10 @@ jobs:
           base64-encoded-secret: ${{ secrets.DROPBOX }}
           filename: "tokenfile.RDS"
     
+      - name: Install rdrop2
+        run: |
+          Rscript -e "devtools::install_github('karthik/rdrop2')"
+              
       - name: Hello
         run: |
           Rscript preprocess.R

@@ -1,3 +1,4 @@
+library(rdrop2)
 
 message("Starting")
 
@@ -6,6 +7,9 @@ if(file.exists("tokenfile.RDS")) {
 } else {
   message("No token file :(")
 }
+
+# Can we read the Dropbox directory?
+x <- drop_dir()
 
 writeLines(as.character(Sys.time()), 'output.txt')
 
