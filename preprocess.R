@@ -1,16 +1,19 @@
 library(rdrop2)
 
-message("Starting")
+message("Starting preprocess.R")
 
-if(file.exists("tokenfile.RDS")) {
+TOKENFILE <- "tokenfile.RDS"
+
+if(file.exists(TOKENFILE)) {
   message("Token file exists!")
-  readRDS("tokenfile.RDS")
+  message("File size is ", file.size(TOKENFILE))
+  readRDS(TOKENFILE)
 } else {
   message("No token file :(")
 }
 
 # Can we read the Dropbox directory?
-drop_auth(rdstoken = "tokenfile.RDS")
+drop_auth(rdstoken = TOKENFILE)
 x <- drop_dir()
 
 writeLines(as.character(Sys.time()), 'output.txt')
