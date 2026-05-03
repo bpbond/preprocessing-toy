@@ -9,7 +9,7 @@ if(file.exists("tokenfile.RDS")) {
 }
 
 # Can we read the Dropbox directory?
-x <- drop_dir()
+x <- drop_dir(dtoken = "tokenfile.RDS")
 
 writeLines(as.character(Sys.time()), 'output.txt')
 
