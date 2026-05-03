@@ -33,6 +33,7 @@ jobs:
       - name: Install rdrop2
         run: |
           Rscript -e "devtools::install_github('karthik/rdrop2')"
+          Rscript -e "install.packages('here')"
               
       - name: Hello
         run: |
