@@ -4,6 +4,7 @@ message("Starting")
 
 if(file.exists("tokenfile.RDS")) {
   message("Token file exists!")
+  readRDS("tokenfile.RDS")
 } else {
   message("No token file :(")
 }
