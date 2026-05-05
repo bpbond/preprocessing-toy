@@ -7,6 +7,7 @@ TOKENFILE <- "tokenfile.RDS"
 if(file.exists(TOKENFILE)) {
   message("Token file exists!")
   message("File size is ", file.size(TOKENFILE))
+  message("Trying to readRDS it...")
   readRDS(TOKENFILE)
 } else {
   message("No token file :(")
