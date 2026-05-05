@@ -16,6 +16,7 @@ if(file.exists(TOKENFILE)) {
 # Can we read the Dropbox directory?
 drop_auth(rdstoken = TOKENFILE)
 x <- drop_dir()
+print(x)
 
 writeLines(as.character(Sys.time()), 'output.txt')
 
