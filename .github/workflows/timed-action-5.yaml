@@ -32,7 +32,7 @@ jobs:
     
       - name: Install rdrop2
         run: |
-          Rscript -e "devtools::install_github('karthik/rdrop2')"
+          Rscript -e "devtools::install_github('COMPASS-DOE/rdrop2refreshtoken')"
               
       - name: Hello
         run: |
